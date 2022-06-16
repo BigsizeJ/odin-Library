@@ -1,7 +1,8 @@
-const add = document.querySelector('#btn-add')
-
+const add = document.querySelector('#add')
+const modal = document.querySelector('.modal')
 
 
 add.addEventListener('click', () =>{
-    console.log("CLICK")
+    modal.style.display = "block";
+    console.log("hello")
 })

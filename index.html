@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
     <title>Library</title>
 </head>
 <body>
@@ -22,11 +22,32 @@
             </div>
         </div>
         <div class="content">
-
+            <div class="modal">
+                <div class="modal-content">
+                    <p>Add Book</p>
+                    <label for="title">Title
+                        <input type="text" id="title">
+                    </label>
+                    <label for="author">Author
+                        <input type="text" id="author">
+                    </label>
+                    <label for="page">Page
+                        <input type="number" id="Page">
+                    </label>
+                   
+                    <label for="isRead">
+                        Have you read it?
+                        <input type="checkbox" name="isRead" id="isRead">
+                    </label>
+                </div>
+            </div>
         </div>
+
+      
+
         <label for="add" class="add-container">
             <img class="add-img" src="asset/add.svg">
-            <button id="add btn-add"></button>
+            <button id="add"></button>
         </label>
     </div>
 </body>
