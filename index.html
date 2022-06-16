@@ -14,39 +14,34 @@
             <div class="logo">
                 <p>Book Library</p>
             </div>
-            <div class="theme">
+          
                 <label for="theme" class="theme-container">
-                    <img src="asset/theme.svg">
+                    <img src="asset/theme.svg" draggable="false">
                     <input type="checkbox" id="theme">
                 </label>
-            </div>
+      
         </div>
         <div class="content">
-            <div class="modal">
+        </div>
+
+        <div class="modal">
+            <div class="modal-container">
                 <div class="modal-content">
                     <p>Add Book</p>
-                    <label for="title">Title
-                        <input type="text" id="title">
-                    </label>
-                    <label for="author">Author
-                        <input type="text" id="author">
-                    </label>
-                    <label for="page">Page
-                        <input type="number" id="Page">
-                    </label>
-                   
+                    <input type="text" id="title" class="inp" placeholder="Title" required>
+                    <input type="text" id="author" class="inp" placeholder="Author" required>
+                    <input type="number" id="Page" class="inp" placeholder="Page" required>
                     <label for="isRead">
                         Have you read it?
                         <input type="checkbox" name="isRead" id="isRead">
                     </label>
                 </div>
             </div>
+            
         </div>
 
-      
-
         <label for="add" class="add-container">
-            <img class="add-img" src="asset/add.svg">
+            <img class="add-img" src="asset/add.svg" draggable="false">
             <button id="add"></button>
         </label>
     </div>
