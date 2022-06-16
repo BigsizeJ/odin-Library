@@ -11,6 +11,9 @@ add.addEventListener('click', () =>{
     add_icon.classList.toggle('close-img')
 })
 
+add.addEventListener('touch', () => {
+    add_icon.classList.toggle('close-img')
+})  
 
 theme.addEventListener('click', () => {
     container.classList.toggle('dark')

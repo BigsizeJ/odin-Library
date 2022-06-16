@@ -10,7 +10,7 @@
 
 :root{
     --light: #fefefe;
-    --secondary-light: rgba(200, 200, 200, .3);
+    --line: #b48b8b;
     --dark: #121212;
     --secondary-dark: #1a1a1a;
 
@@ -92,25 +92,22 @@ body{
 .add-img{
     width: 50px;
     transition: .5s ease;
-    transform: rotate(0deg);
+
 }
 
 .add-img:hover{
     cursor: pointer;
     transition: .5s ease;
-    transform: scale(1.2) ;
-
+    transform: scale(1.2) rotate(225deg);
 }
 
 .close-img{
-
     transition: .5s ease;
     transform: rotate(225deg);
 }
 
 .modal{
     transition: .2s linear;
-    display: none;
     transform: scale(0);
     position: fixed;
     width: 100%;
@@ -132,12 +129,23 @@ body{
     flex-direction: column;
     background-color: #fefefe;
     min-width: 300px;
-    min-height: 350px;
+    min-height: 300px;
     gap: 10px;
     border-radius: 5px;
     background-color: var(--light);
     padding: 20px;
     box-shadow: 0px 5px 10px gray;
+}
+
+.inp{
+    padding: 10px;
+    border-radius: 10px;
+    background-color: var(--secondary-light);
+    border: 1px solid var(--line);
+}
+
+.inp:focus{
+    outline: 2px solid var(--secondary-dark);
 }
 
 .modal-content p{
@@ -150,7 +158,23 @@ body{
 }
 
 .modal-content label{
+    display: flex;
+    align-items: center;
     padding: 10px;
+}
+
+.modal-content button{
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    font-family: RobotoBold, sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
+}
+
+.modal-content button:hover{
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, .15);
 }
 
 .pop{
@@ -159,13 +183,6 @@ body{
     transform: scale(1);
 }    
 
-
-.inp{
-    padding: 10px;
-    border-radius: 10px;
-    background-color: var(--secondary-light);
-    border: none;
- 
-}    
-
-
+.content{
+    display: grid;
+}
