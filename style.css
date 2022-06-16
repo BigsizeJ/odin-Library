@@ -1,0 +1,75 @@
+@font-face {
+    font-family: Roboto;
+    src: url(asset/Roboto-Bold.ttf);
+}
+
+@font-face {
+    font-family: RobotoBold;
+    src: url(asset/Roboto-Bold.ttf);
+}
+
+:root{
+    --light: #fefefe;
+
+}
+
+body{
+    padding: 0;
+    margin: 0;
+    font-family: Roboto, sans-serif;
+}
+
+.container{
+    display: grid;
+}
+
+.header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--light);
+    box-shadow: 0px 2px 10px gray;
+    border-radius: 20px;
+}
+
+.logo{
+    font-family: RobotoBold, sans-serif;
+    font-weight: 700;
+    font-size: 1.5rem;
+    padding: 5px 20px;
+}
+
+.logo p{
+    padding: 0;
+    margin: 0;
+}
+
+.theme-container{
+    display: flex;
+    padding: 5px 20px;
+    align-items: center;
+}
+
+
+.theme-container input[type=checkbox]{
+    display: none;
+}
+
+.add-container{
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    padding: 10px;
+}
+
+.add-container button{
+    display: none;
+}
+
+.add-img{
+    width: 40px;
+}
+
+.add-img:hover{
+    cursor: pointer;
+}
