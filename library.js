@@ -42,6 +42,14 @@ class Library extends Book{
         this.createCard(object)
     }
 
+    removeBook(name){
+        let newBook = this.bookArray.filter((value, index, arr) => {
+            return value.title !== name;
+            
+        })
+        this.bookArray = newBook
+    }
+
     createCard(object){
         const content = document.querySelector('.content')
 
@@ -60,6 +68,7 @@ class Library extends Book{
         textTitle.innerText = object.title
         textAuthor.innerText = `By ${object.author}`
         textPage.innerText = `${object.page} pages`
+
         switch(object.read){
             case true:
                 btn.innerText = 'READ'
@@ -89,6 +98,11 @@ class Library extends Book{
                 })
                 break
         }
+
+        btn_remove.addEventListener('click', () => {
+            div.remove()
+            this.removeBook(object.title)
+        })
         div.appendChild(textTitle)
         div.appendChild(textAuthor)
         div.appendChild(textPage)
