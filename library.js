@@ -26,9 +26,8 @@ class Book{
     
 }
 
-class Library extends Book{
+class Library{
     constructor(){
-        super()
         this.bookArray = []
     }
 
@@ -48,6 +47,18 @@ class Library extends Book{
             
         })
         this.bookArray = newBook
+    }
+
+    toggleRead(name){
+        for(let i = 0; i < this.bookArray.length; i++){
+            if(this.bookArray[i].title === name){
+                if(this.bookArray[i].read === false){
+                    this.bookArray[i].read = true;
+                    return
+                }
+                this.bookArray[i].read = false
+            }
+        }
     }
 
     createCard(object){
@@ -74,20 +85,21 @@ class Library extends Book{
                 btn.innerText = 'READ'
                 btn.className = "btn-read"
                 btn.addEventListener('click', () => {
+                    this.toggleRead(object.title)
                     if(btn.classList.contains('btn-read')){
                         btn.classList.replace('btn-read', 'btn-notRead')
                         btn.innerText = "NOT READ"
                         return
                     }
                     btn.classList.replace('btn-notRead', 'btn-read')
-                    btn.innerText = "READ"
-                 
+                    btn.innerText = "READ"          
                 })
                 break
             case false:
                 btn.innerText = 'NOT READ'
                 btn.className = "btn-notRead"
                 btn.addEventListener('click', () => {
+                    this.toggleRead(object.title)
                     if(btn.classList.contains('btn-notRead')){
                         btn.classList.replace('btn-notRead', 'btn-read')
                         btn.innerText = "READ"
