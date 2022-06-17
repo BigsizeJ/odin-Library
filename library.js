@@ -26,8 +26,9 @@ class Book{
     
 }
 
-class Library{
+class Library extends Book{
     constructor(){
+        super()
         this.bookArray = []
     }
 
@@ -38,13 +39,44 @@ class Library{
             }
         }
         this.bookArray.push(object)
+        this.createCard(object)
     }
 
     createCard(object){
         const content = document.querySelector('.content')
 
         let div = document.createElement('div')
-        
+        let textTitle = document.createElement('p')
+        let textAuthor = document.createElement('p')
+        let textPage = document.createElement('p')
+        let btn_read = document.createElement('button')
+        let btn_remove = document.createElement('button')
+
+        textTitle.className = "title"
+  
+        btn_remove.className = 'btn-remove'
+        btn_remove.innerText = "REMOVE"
+
+        textTitle.innerText = object.title
+        textAuthor.innerText = `By ${object.author}`
+        textPage.innerText = `${object.page} pages`
+        switch(object.read){
+            case true:
+                btn_read.innerText = 'READ'
+                btn_read.className = "btn-read"
+                break
+            case false:
+                btn_read.innerText = 'NOT READ'
+                btn_read.className = "btn-notRead"
+                break
+                
+        }
+        div.appendChild(textTitle)
+        div.appendChild(textAuthor)
+        div.appendChild(textPage)
+        div.appendChild(btn_read)
+        div.appendChild(btn_remove)
+        content.appendChild(div)
     }
 }
 
@@ -67,7 +99,9 @@ submit.addEventListener('click', (e) => {
         return
     }
 
-  
+    const modal = document.querySelector('.modal')
+    const add_img = document.querySelector('.add-img')
+
     let titleValue = title.value
     let authorValue = author.value
     let pageValue = page.value
@@ -75,5 +109,7 @@ submit.addEventListener('click', (e) => {
 
     book.setInfo(titleValue, authorValue, pageValue, readValue)
     lib.addBook(book.getInfo())
-    console.table(lib.bookArray)
+
+    modal.classList.remove('pop')
+    add_img.classList.remove('close-img')
 })
