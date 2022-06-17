@@ -185,4 +185,26 @@ body{
 
 .content{
     display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-template-rows: repeat(auto-fill, minmax(300px, 1fr));
+    padding: 50px;
+    grid-gap: 20px;
+}
+
+.content div{
+    display: flex;
+    flex-direction: column;
+    background-color: var(--light);
+    max-height: 300px;
+    border: 1px solid var(--line);
+    box-shadow: 0px 3px 5px gray;
+}
+
+.title{
+    font-family: RobotoBold, sans-serif;
+    text-align: center;
+    padding: 10px;
+    margin: 0;
+    font-size: 1.5rem;
+  
 }

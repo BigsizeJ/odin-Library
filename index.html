@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <script src="script.js" defer></script>
+    <script src="library.js" defer></script>
     <title>Library</title>
 </head>
 <body>
@@ -20,25 +21,32 @@
                     <input type="checkbox" id="theme">
                 </label>
         </div>
+
         <div class="content">
+            <div>
+                <p class="title">The Hobbit</p>
+                <p class="author">AUTHOR: JR TOLKEIN</p>
+            </div>
+            <div>
+                <p class="title">The Hobbit</p>
+                <p class="author">AUTHOR: JR TOLKEIN</p>
+            </div>
         </div>
 
         <div class="modal">
             <div class="modal-container">
-                <div class="modal-content">
+                <form class="modal-content">
                     <p>Add Book</p>
                     <input type="text" id="title" class="inp" placeholder="Title" required>
                     <input type="text" id="author" class="inp" placeholder="Author" required>
-                    <input type="number" id="Page" class="inp" placeholder="Page" required>
+                    <input type="number" id="page" class="inp" placeholder="Page" required>
                     <label for="isRead">
                         Have you read it?
                         <input type="checkbox" name="isRead" id="isRead">
                     </label>
-
-                    <button>Submit</button>
-                </div>
+                    <button id="submit">Submit</button>
+                </form>           
             </div>
-            
         </div>
 
         <label for="add" class="add-container">
