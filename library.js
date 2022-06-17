@@ -49,7 +49,7 @@ class Library extends Book{
         let textTitle = document.createElement('p')
         let textAuthor = document.createElement('p')
         let textPage = document.createElement('p')
-        let btn_read = document.createElement('button')
+        let btn = document.createElement('button')
         let btn_remove = document.createElement('button')
 
         textTitle.className = "title"
@@ -62,19 +62,37 @@ class Library extends Book{
         textPage.innerText = `${object.page} pages`
         switch(object.read){
             case true:
-                btn_read.innerText = 'READ'
-                btn_read.className = "btn-read"
+                btn.innerText = 'READ'
+                btn.className = "btn-read"
+                btn.addEventListener('click', () => {
+                    if(btn.classList.contains('btn-read')){
+                        btn.classList.replace('btn-read', 'btn-notRead')
+                        btn.innerText = "NOT READ"
+                        return
+                    }
+                    btn.classList.replace('btn-notRead', 'btn-read')
+                    btn.innerText = "READ"
+                 
+                })
                 break
             case false:
-                btn_read.innerText = 'NOT READ'
-                btn_read.className = "btn-notRead"
+                btn.innerText = 'NOT READ'
+                btn.className = "btn-notRead"
+                btn.addEventListener('click', () => {
+                    if(btn.classList.contains('btn-notRead')){
+                        btn.classList.replace('btn-notRead', 'btn-read')
+                        btn.innerText = "READ"
+                        return
+                    }
+                    btn.classList.replace('btn-read', 'btn-notRead')
+                    btn.innerText = "NOT READ"
+                })
                 break
-                
         }
         div.appendChild(textTitle)
         div.appendChild(textAuthor)
         div.appendChild(textPage)
-        div.appendChild(btn_read)
+        div.appendChild(btn)
         div.appendChild(btn_remove)
         content.appendChild(div)
     }
@@ -92,6 +110,8 @@ const page = document.querySelector('#page')
 const read = document.querySelector('#isRead')
 
 
+
+
 submit.addEventListener('click', (e) => {
     e.preventDefault()
     if(form.checkValidity() == false){
@@ -106,10 +126,16 @@ submit.addEventListener('click', (e) => {
     let authorValue = author.value
     let pageValue = page.value
     let readValue = read.checked
-
+    
     book.setInfo(titleValue, authorValue, pageValue, readValue)
     lib.addBook(book.getInfo())
 
     modal.classList.remove('pop')
     add_img.classList.remove('close-img')
+
+    title.value = ''
+    author.value = ''
+    page.value = ''
+    read.checked = false
 })
+

@@ -229,12 +229,12 @@ body{
     width: 50%;
 }
 
-.btn-read:hover, .btn-remove:hover{
+.btn-read:hover, .btn-remove:hover, .btn-notRead:hover{
     cursor: pointer;
     transform: scale(1.1)
 }
 
-.btn-read:active, .btn-remove:active{
+.btn-read:active, .btn-remove:active, .btn-notRead:active{
     cursor: pointer;
     transform: translateY(1px);
 }
