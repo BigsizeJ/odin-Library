@@ -146,7 +146,7 @@ submit.addEventListener('click', (e) => {
     }
 
     const modal = document.querySelector('.modal')
-    const add_img = document.querySelector('.add-img')
+    const add_img = document.querySelector('#add')
 
     let titleValue = title.value
     let authorValue = author.value

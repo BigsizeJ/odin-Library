@@ -26,14 +26,8 @@ body{
     user-select: none;
 }
 
-.dark{
-    background-color: var(--dark);
-}
-.darkHeader{
-    background-color: var(--secondary-dark);
-}
-
 .container{
+    transition: 500ms ease;
     height: 100%;
     width: 100%;
     display: grid;
@@ -42,6 +36,7 @@ body{
 }
 
 .header{
+    transition: 500ms ease;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -76,26 +71,27 @@ body{
     cursor: pointer;
 }
 
-
-.add-container{
+#add {
     position: fixed;
-    bottom: 0;
-    right: 0;
+    bottom: 10px;
+    right: 10px;
+    border-radius: 100%;
+    border: none;
+    display: flex;
+    align-items: center;
     padding: 10px;
-    z-index: 100;
-}
-
-.add-container button{
-    display: none;
-}
-
-.add-img{
-    width: 50px;
+    background-color: var(--dark);
+    cursor: pointer;
     transition: .5s ease;
-
 }
 
-.add-img:hover{
+#add img {
+    filter: invert(100%) sepia(100%) saturate(2%) hue-rotate(3deg) brightness(103%) contrast(101%);
+    width: 30px;
+}
+
+
+#add:hover{
     cursor: pointer;
     transition: .5s ease;
     transform: scale(1.2) rotate(225deg);
@@ -184,16 +180,18 @@ body{
 }    
 
 .content{
-
+    transition: 200ms ease;
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     grid-template-rows: repeat(auto-fill, minmax(300px, 1fr));
     padding: 20px;
     margin-top: 30px;
     grid-gap: 20px;
+    background-color: transparent;
 }
 
 .content div{
+    transition: 500ms ease;
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -204,6 +202,7 @@ body{
     text-align: center;
     font-size: 1.2rem;
     margin: 0;
+    border: none;
 }
 
 .container p{
@@ -251,4 +250,53 @@ body{
 
 .content button{
     margin: 8px;
+}
+
+
+
+
+.content.dark div {
+    transition: 500ms ease;
+    background-color: var(--dark);
+    color: var(--light);
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, .5);
+    border: none;
+}
+.content.dark div > .btn-remove {
+    background-color: var(--secondary-dark);
+    color: var(--light);
+}
+.container.dark {
+    transition: 500ms ease;
+    background-color: var(--secondary-dark);
+}
+.header.dark {
+    transition: 500ms ease;
+    color: var(--light);
+    background-color: var(--dark);
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, .5);
+}
+#add.dark {
+    background-color:transparent;
+}
+.theme-icon.dark {
+    filter: invert(100%) sepia(100%) saturate(2%) hue-rotate(3deg) brightness(103%) contrast(101%);
+}
+.modal-content.dark {
+    background-color: var(--dark);
+    color: var(--light);
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, .5);
+}
+.modal-content.dark input {
+    background-color: var(--dark);
+    color: var(--light);
+}
+.modal-content.dark #submit {
+    background-color: var(--secondary-dark);
+    color: var(--light);
+}
+.modal-content.dark #submit:hover {
+    transition: 100ms ease;
+    background-color: rgba(0, 0, 0, .5);
+    color: var(--light);
 }
